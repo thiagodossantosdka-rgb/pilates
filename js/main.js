@@ -322,8 +322,33 @@
   var blockedVideos = new Set();
   function tryPlay(video) {
     var p = video.play();
-    if (p && p.then) p.then(function () { blockedVideos.delete(video); }, function () { blockedVideos.add(video); });
+    if (p && p.then) p.then(function () { blockedVideos.delete(video); }, function () {
+      blockedVideos.add(video);
+      safariImgFallback(video);
+    });
     return p;
+  }
+
+  /**
+   * Plano B do Safari: quando o iPhone recusa o autoplay do <video> (Modo de Pouca
+   * Energia, por exemplo) ele mostra um botão de play. O Safari também aceita MP4
+   * dentro de <img>, que roda sozinho e em loop como um GIF e não passa por essa
+   * regra. Então trocamos o <video> por um <img src="....mp4"> com as mesmas classes.
+   */
+  function safariImgFallback(video) {
+    if (!isSafari || video.dataset.imgFallback || !video.dataset.loaded) return;
+    video.dataset.imgFallback = "1";
+    var img = document.createElement("img");
+    img.className = video.className.replace("is-playing", "") + " is-img-video";
+    img.alt = ""; img.setAttribute("aria-hidden", "true"); img.decoding = "async";
+    img.onload = function () {
+      video.pause();
+      video.style.display = "none";   // só esconde o <video> quando a imagem animada carregou
+      blockedVideos.delete(video);
+    };
+    img.onerror = function () { img.remove(); };
+    img.src = video.dataset.loaded + ".mp4";
+    video.parentNode.insertBefore(img, video.nextSibling);
   }
   function unlockOnGesture() {
     function unlock() {
@@ -354,8 +379,15 @@
     sources[sources.length - 1].addEventListener("error", function () { video.classList.add("is-broken"); });
     video.addEventListener("playing", function () { video.classList.add("is-playing"); }, { once: true });
     video.load();
-    if (play !== false) tryPlay(video);
     video.dataset.loaded = base;
+    if (play !== false) {
+      tryPlay(video);
+      // Vigia: se no Safari o vídeo continuar parado (promessa que nunca resolve),
+      // cai para o plano B em vez de deixar o botão de play na tela.
+      if (isSafari) setTimeout(function () {
+        if (video.paused && video.currentTime === 0) safariImgFallback(video);
+      }, 3500);
+    }
   }
 
   /**
