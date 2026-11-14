@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===================== SEO LOCAL ===================== -->
+  <title>Pilates e Fisioterapia em Brasília | Kinehos — Agende sua Avaliação</title>
+  <meta name="description" content="Pilates em aparelhos e Fisioterapia integrados no Condomínio RK, Brasília/DF. Avaliação com fisioterapeuta e plano individualizado. Agende pelo WhatsApp.">
+  <meta name="theme-color" content="#0E3B43">
+  <meta name="robots" content="index, follow">
+  <!-- Quando o domínio estiver definido, descomente e preencha:
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/">
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/">
+  -->
+
+  <!-- Open Graph / redes sociais (og:image deve virar URL absoluta após publicar) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Kinehos Pilates e Fisioterapia">
+  <meta property="og:title" content="Pilates e Fisioterapia em Brasília | Kinehos">
+  <meta property="og:description" content="Sua dor não é normal. Pilates e Fisioterapia no mesmo lugar, com plano individual. Agende sua avaliação pelo WhatsApp.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- Fontes do Google Fonts (Cormorant Garamond + DM Sans) hospedadas localmente em
+       assets/fonts — evita conexão extra com outro domínio e melhora o carregamento. -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/dm-sans.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond-italic.woff2" crossorigin>
+
+  <!-- Poster do hero é o maior elemento da primeira dobra (LCP): pré-carregar -->
+  <link rel="preload" as="image" type="image/webp" href="assets/img/poster-hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/img/poster-hero.webp" media="(min-width: 768px)" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Marca que o JS está ativo (as animações de entrada só escondem conteúdo nesse caso) -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<!--
+  ⚠️ LEMBRETE — PUBLICIDADE EM SAÚDE (COFFITO)
+  Todos os textos desta página foram escritos em tom ético (sem promessa de
+  cura, sem "o melhor", "garantido" ou "100%", sem antes/depois), mas DEVEM
+  ser validados pela clínica e pelo responsável técnico antes de publicar.
+-->
+<body>
+  <!-- Sprite de ícones SVG (reutilizados com <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9.1 7.6c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.6.7c-.1.1-.2.3 0 .5.6 1 1.4 1.8 2.4 2.4.2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.3.3.3.5 0 .9-.7 1.8-1.7 1.9-1 .1-2.4-.3-4-1.6-1.6-1.3-2.7-3-2.9-4.2-.2-1.2.6-2.5 1.6-3.1Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 48 24"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ===================== TELA DE CARREGAMENTO ===================== -->
+  <!-- Só aparece com JS ativo. Espera fontes, poster e vídeo do hero ficarem prontos. -->
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader__glow"></div>
+    <div class="loader__inner">
+      <svg class="loader__mark" viewBox="0 0 64 32" focusable="false">
+        <path class="loader__track" d="M2 17h14l4-9 6 18 6-24 5 19 3-4h22" pathLength="1"/>
+        <path class="loader__beat" d="M2 17h14l4-9 6 18 6-24 5 19 3-4h22" pathLength="1"/>
+      </svg>
+      <p class="loader__name"><span style="--i:0">K</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">e</span><span style="--i:4">h</span><span style="--i:5">o</span><span style="--i:6">s</span></p>
+      <p class="loader__tag">Pilates &amp; Fisioterapia</p>
+      <div class="loader__bar"><span data-loader-bar></span></div>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progress" data-progress aria-hidden="true"></div>
+
+  <!-- ===================== 1. HEADER ===================== -->
+  <header class="header" id="topo" data-header>
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="Kinehos Pilates e Fisioterapia — início">
+        <svg class="logo__mark" viewBox="0 0 64 32" aria-hidden="true">
+          <path d="M2 17h14l4-9 6 18 6-24 5 19 3-4h22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">Kinehos</span>
+          <span class="logo__tag">Pilates &amp; Fisioterapia</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#espaco">O espaço</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="https://wa.me/5561995719079" data-wa="header" data-wa-msg="padrao" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+        <span>Agendar <span class="hide-xs">avaliação</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Linha de pulso (ECG) que atravessa a página — desenhada via JS conforme o scroll -->
+    <svg class="pulse-line" data-pulse-line aria-hidden="true" focusable="false">
+      <path class="pulse-line__track" d=""/>
+      <path class="pulse-line__path" d=""/>
+      <circle class="pulse-line__dot" r="4" cx="-20" cy="-20"/>
+    </svg>
+
+    <!-- ===================== 2. HERO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <picture>
+          <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/poster-hero-mobile.webp" width="540" height="960">
+          <source media="(max-width: 767px)" srcset="assets/img/poster-hero-mobile.jpg" width="540" height="960">
+          <source type="image/webp" srcset="assets/img/poster-hero.webp">
+          <img class="hero__poster" src="assets/img/poster-hero.jpg" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+        </picture>
+        <!-- O JS escolhe hero-mobile (9:16) abaixo de 768px e hero (16:9) acima -->
+        <video class="hero__video" data-hero-video muted loop playsinline autoplay preload="metadata" aria-hidden="true"
+               data-src-mobile="assets/video/hero-mobile" data-src-desktop="assets/video/hero"></video>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light">Condomínio RK · Brasília/DF</p>
+        <h1 class="hero__title" id="hero-title">Sua dor <em>não é</em> normal. Seu movimento <em>tem solução.</em></h1>
+        <p class="hero__lead">Pilates e Fisioterapia no mesmo lugar, com plano individual e acompanhamento profissional, em Brasília.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg btn--pulse" href="https://wa.me/5561995719079" data-wa="hero" data-wa-msg="padrao" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Agendar minha avaliação
+          </a>
+          <a class="link-arrow link-arrow--light" href="#para-voce">Ver como podemos ajudar <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <ul class="seals" aria-label="Diferenciais">
+          <li class="seal"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Fisioterapeutas especializados</li>
+          <li class="seal"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Plano individualizado</li>
+          <li class="seal"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pilates + Fisio integrados</li>
+        </ul>
+      </div>
+
+      <!-- A linha de pulso "nasce" aqui -->
+      <svg class="hero__ecg" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 50 H560 l18 -6 l14 6 H640 l10 -34 l14 58 l14 -50 l10 26 H760 l16 -8 l14 8 H1440" pathLength="1"/>
+      </svg>
+
+      <a class="scroll-cue" href="#para-voce" aria-label="Rolar para o conteúdo"><span></span></a>
+    </section>
+
+    <!-- ===================== 3. O QUE TE TROUXE ATÉ AQUI ===================== -->
+    <section class="section section--light" id="para-voce" aria-labelledby="motivos-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow">Para você</p>
+          <h2 class="section__title" id="motivos-title">O que te <em>trouxe</em> até aqui?</h2>
+          <p class="section__lead">Escolha o que mais combina com você. Você fala direto com a nossa equipe pelo WhatsApp, sem formulário.</p>
+        </header>
+
+        <div class="motives" data-carousel>
+          <ul class="motives__track" data-carousel-track>
+            <li class="motive reveal">
+              <a class="motive__link" href="https://wa.me/5561995719079" data-wa="card-coluna" data-wa-msg="coluna" data-wa-servico="Dor nas costas e coluna" target="_blank" rel="noopener">
+                <span class="motive__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><path d="M24 4v40M18 9h12M17 16h14M18 23h12M17 30h14M18 37h12"/></svg>
+                </span>
+                <h3 class="motive__title">Dor nas costas e coluna</h3>
+                <p class="motive__text">Lombar, cervical ou aquela tensão que não passa. A avaliação ajuda a entender a origem e definir o cuidado adequado.</p>
+                <span class="motive__cta">Quero avaliar minha coluna <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </a>
+            </li>
+            <li class="motive reveal">
+              <a class="motive__link" href="https://wa.me/5561995719079" data-wa="card-lesao" data-wa-msg="lesao" data-wa-servico="Recuperação de lesão ou cirurgia" target="_blank" rel="noopener">
+                <span class="motive__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><path d="M10 38c6-2 10-8 12-14s6-12 16-14"/><circle cx="22" cy="24" r="5"/><path d="M30 32l6 6M36 32l-6 6"/></svg>
+                </span>
+                <h3 class="motive__title">Recuperação de lesão ou cirurgia</h3>
+                <p class="motive__text">Reabilitação com acompanhamento próximo, respeitando cada fase da sua recuperação.</p>
+                <span class="motive__cta">Quero me recuperar bem <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </a>
+            </li>
+            <li class="motive reveal">
+              <a class="motive__link" href="https://wa.me/5561995719079" data-wa="card-postura" data-wa-msg="postura" data-wa-servico="Postura e mobilidade" target="_blank" rel="noopener">
+                <span class="motive__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><circle cx="24" cy="8" r="4"/><path d="M24 13v14M24 27l-7 15M24 27l7 15M14 18h20"/></svg>
+                </span>
+                <h3 class="motive__title">Postura e mobilidade</h3>
+                <p class="motive__text">Rigidez, desconforto para ficar sentado ou movimentos limitados no dia a dia.</p>
+                <span class="motive__cta">Quero me mover melhor <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </a>
+            </li>
+            <li class="motive reveal">
+              <a class="motive__link" href="https://wa.me/5561995719079" data-wa="card-esporte" data-wa-msg="esporte" data-wa-servico="Performance e recuperação esportiva" target="_blank" rel="noopener">
+                <span class="motive__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c-6 5-6 27 0 32M24 8c6 5 6 27 0 32"/></svg>
+                </span>
+                <h3 class="motive__title">Performance e recuperação esportiva</h3>
+                <p class="motive__text">Prevenção, recuperação e preparo para quem treina e compete.</p>
+                <span class="motive__cta">Sou atleta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </a>
+            </li>
+            <li class="motive reveal">
+              <a class="motive__link" href="https://wa.me/5561995719079" data-wa="card-50mais" data-wa-msg="vida50" data-wa-servico="Qualidade de vida (50+)" target="_blank" rel="noopener">
+                <span class="motive__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 18a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 12-16 22-16 22Z"/><path d="M12 24h7l3-5 4 9 3-4h7"/></svg>
+                </span>
+                <h3 class="motive__title">Qualidade de vida <span class="nowrap">(50+)</span></h3>
+                <p class="motive__text">Força, equilíbrio e autonomia, com exercícios seguros e adaptados a você.</p>
+                <span class="motive__cta">Quero mais disposição <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </a>
+            </li>
+          </ul>
+          <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. PILATES + FISIOTERAPIA INTEGRADOS ===================== -->
+    <section class="section section--dark" id="metodo" aria-labelledby="metodo-title" data-pulse-anchor>
+      <div class="container container--narrow">
+        <div class="split__text">
+          <header class="section__head section__head--left reveal">
+            <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+            <p class="eyebrow eyebrow--light">O método Kinehos</p>
+            <h2 class="section__title" id="metodo-title">Pilates e Fisioterapia, <em>integrados</em> num só caminho.</h2>
+            <p class="section__lead section__lead--big" data-scrub>Em vez de começar no escuro, você começa com quem entende de corpo e movimento. A fisioterapia investiga, o Pilates dá continuidade, e a mesma equipe acompanha tudo.</p>
+          </header>
+
+          <ol class="flow" data-flow>
+            <li class="flow__step">
+              <span class="flow__node" aria-hidden="true">1</span>
+              <div>
+                <h3 class="flow__title">Avaliação com fisioterapeuta</h3>
+                <p>Histórico, rotina, postura e movimento: entendemos o que está por trás do que você sente.</p>
+              </div>
+            </li>
+            <li class="flow__step">
+              <span class="flow__node" aria-hidden="true">2</span>
+              <div>
+                <h3 class="flow__title">Plano individual</h3>
+                <p>Fisioterapia, Pilates ou os dois, na frequência que faz sentido para o seu objetivo.</p>
+              </div>
+            </li>
+            <li class="flow__step">
+              <span class="flow__node" aria-hidden="true">3</span>
+              <div>
+                <h3 class="flow__title">Pilates para manter e evoluir</h3>
+                <p>Aulas em aparelhos com acompanhamento profissional, para seguir fortalecendo com segurança.</p>
+              </div>
+            </li>
+          </ol>
+
+          <a class="btn btn--primary btn--pulse" href="https://wa.me/5561995719079" data-wa="metodo" data-wa-msg="padrao" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Começar pela avaliação
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. TRATAMENTOS E TECNOLOGIAS ===================== -->
+    <section class="section section--sand" id="tratamentos" aria-labelledby="trat-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow">Tratamentos e tecnologias</p>
+          <h2 class="section__title" id="trat-title">Recursos <em>certos</em> para cada fase.</h2>
+          <p class="section__lead">A indicação de cada recurso é feita após a avaliação, de acordo com a sua necessidade.</p>
+        </header>
+
+        <div class="treatments">
+          <!-- Fisioterapia -->
+          <article class="treat treat--wide treat--media reveal">
+            <div class="media treat__media">
+              <img class="media__poster" src="assets/img/poster-avaliacao.webp" width="1280" height="720" alt="Fisioterapeuta realiza terapia manual na região lombar" loading="lazy" decoding="async">
+              <video class="media__video" data-lazy-video muted loop playsinline autoplay preload="metadata" aria-hidden="true" data-src="assets/video/avaliacao"></video>
+            </div>
+            <div class="treat__body">
+              <h3 class="treat__title">Fisioterapia</h3>
+              <p>Avaliação e tratamento individualizado para dores, lesões e reabilitação, com terapia manual e exercícios terapêuticos.</p>
+              <button class="link-arrow" type="button" data-modal-open="m-fisio" aria-haspopup="dialog">Saber mais <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div class="treat__more" id="m-fisio" hidden data-title="Fisioterapia" data-wa-msg="fisioterapia" data-wa-servico="Fisioterapia">
+              <p>A fisioterapia começa por uma avaliação detalhada: histórico, exames que você tiver, postura, força, mobilidade e pontos de dor.</p>
+              <h4>Pode ser indicada para</h4>
+              <ul class="ticks">
+                <li>Dores na coluna, ombro, joelho e outras articulações</li>
+                <li>Reabilitação após lesões e cirurgias</li>
+                <li>Alterações posturais e limitação de movimento</li>
+              </ul>
+              <h4>Como funciona na Kinehos</h4>
+              <p>As sessões combinam técnicas manuais, exercícios e, quando indicado, recursos como eletroestimulação e pressoterapia. A evolução é acompanhada e o plano é ajustado ao longo do tempo.</p>
+            </div>
+          </article>
+
+          <!-- Pilates em aparelhos -->
+          <article class="treat treat--media reveal">
+            <div class="media treat__media">
+              <img class="media__poster" src="assets/img/poster-pilates.webp" width="1280" height="720" alt="Profissional acompanha aluna em exercício no Cadillac" loading="lazy" decoding="async">
+              <video class="media__video" data-lazy-video muted loop playsinline autoplay preload="metadata" aria-hidden="true" data-src="assets/video/pilates"></video>
+            </div>
+            <div class="treat__body">
+              <h3 class="treat__title">Pilates em aparelhos</h3>
+              <p>Reformer, Cadillac e outros aparelhos, em aulas acompanhadas por profissionais, para fortalecer e ganhar consciência corporal.</p>
+              <button class="link-arrow" type="button" data-modal-open="m-pilates" aria-haspopup="dialog">Saber mais <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div class="treat__more" id="m-pilates" hidden data-title="Pilates em aparelhos" data-wa-msg="pilates" data-wa-servico="Pilates em aparelhos">
+              <p>O Pilates trabalha força, flexibilidade, controle e respiração. Nos aparelhos, as molas permitem adaptar cada exercício ao seu nível.</p>
+              <h4>Pode ser indicado para</h4>
+              <ul class="ticks">
+                <li>Quem nunca fez atividade física ou está retomando</li>
+                <li>Manutenção após a fase de fisioterapia</li>
+                <li>Atletas que buscam controle, mobilidade e estabilidade</li>
+                <li>Pessoas 50+ que querem mais força e equilíbrio</li>
+              </ul>
+              <h4>Como funciona na Kinehos</h4>
+              <p>Antes da primeira aula você passa por avaliação. As aulas seguem o seu plano individual, com acompanhamento profissional em todos os exercícios.</p>
+            </div>
+          </article>
+
+          <!-- Pressoterapia -->
+          <article class="treat treat--media reveal">
+            <div class="media treat__media">
+              <img class="media__poster" src="assets/img/poster-recuperacao.webp" width="1280" height="720" alt="Paciente relaxa em poltrona usando botas de pressoterapia" loading="lazy" decoding="async">
+              <video class="media__video" data-lazy-video muted loop playsinline autoplay preload="metadata" aria-hidden="true" data-src="assets/video/recuperacao"></video>
+            </div>
+            <div class="treat__body">
+              <h3 class="treat__title">Pressoterapia</h3>
+              <p>Botas de compressão pneumática que podem auxiliar a circulação e a sensação de recuperação após treinos.</p>
+              <button class="link-arrow" type="button" data-modal-open="m-presso" aria-haspopup="dialog">Saber mais <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div class="treat__more" id="m-presso" hidden data-title="Pressoterapia" data-wa-msg="pressoterapia" data-wa-servico="Pressoterapia">
+              <p>As botas inflam em ciclos, aplicando compressão sequencial nas pernas. É um recurso confortável, feito em posição relaxada.</p>
+              <h4>Pode ser indicada para</h4>
+              <ul class="ticks">
+                <li>Recuperação após treinos e competições</li>
+                <li>Sensação de pernas pesadas e cansadas</li>
+                <li>Complemento de programas de reabilitação</li>
+              </ul>
+              <h4>Importante</h4>
+              <p>Há situações em que a pressoterapia não é recomendada. Por isso, a indicação é sempre feita pelo fisioterapeuta após avaliação.</p>
+            </div>
+          </article>
+
+          <!-- Liberação miofascial -->
+          <article class="treat treat--icon reveal">
+            <span class="treat__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="12" rx="6"/><path d="M14 18v12M20 18v12M26 18v12M32 18v12"/><path d="M6 38c6-3 12-3 18 0s12 3 18 0"/></svg>
+            </span>
+            <div class="treat__body">
+              <h3 class="treat__title">Liberação miofascial e massagem esportiva</h3>
+              <p>Técnicas manuais e instrumentais que podem ajudar a reduzir tensões e melhorar a mobilidade.</p>
+              <button class="link-arrow" type="button" data-modal-open="m-mio" aria-haspopup="dialog">Saber mais <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div class="treat__more" id="m-mio" hidden data-title="Liberação miofascial e massagem esportiva" data-wa-msg="miofascial" data-wa-servico="Liberação miofascial">
+              <p>Com as mãos e com instrumentos, o profissional trabalha a musculatura e a fáscia em pontos de tensão identificados na avaliação.</p>
+              <h4>Pode ser indicada para</h4>
+              <ul class="ticks">
+                <li>Tensão muscular e sensação de rigidez</li>
+                <li>Preparação e recuperação de treinos e competições</li>
+                <li>Complemento do tratamento de fisioterapia</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Eletroestimulação -->
+          <article class="treat treat--icon reveal">
+            <span class="treat__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M27 4 12 27h11l-3 17 16-24H25l2-16Z"/></svg>
+            </span>
+            <div class="treat__body">
+              <h3 class="treat__title">Eletroestimulação</h3>
+              <p>Recursos de eletroterapia usados como complemento do tratamento, conforme indicação na avaliação.</p>
+              <button class="link-arrow" type="button" data-modal-open="m-eletro" aria-haspopup="dialog">Saber mais <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div class="treat__more" id="m-eletro" hidden data-title="Eletroestimulação" data-wa-msg="eletro" data-wa-servico="Eletroestimulação">
+              <p>Eletrodos aplicados na pele emitem estímulos elétricos controlados, ajustados pelo fisioterapeuta para cada objetivo.</p>
+              <h4>Pode ser usada para</h4>
+              <ul class="ticks">
+                <li>Auxiliar no controle da dor, como parte do tratamento</li>
+                <li>Apoiar a ativação e o fortalecimento muscular na reabilitação</li>
+              </ul>
+              <h4>Importante</h4>
+              <p>É um recurso complementar, nunca isolado, e tem contraindicações. A indicação é feita após avaliação.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. COMO FUNCIONA A PRIMEIRA CONSULTA ===================== -->
+    <section class="section section--light" id="primeira-consulta" aria-labelledby="consulta-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow">Primeira vez?</p>
+          <h2 class="section__title" id="consulta-title">Como funciona sua <em>primeira consulta</em></h2>
+          <p class="section__lead">Nunca fez fisioterapia ou Pilates? Tudo bem. Veja o que acontece, passo a passo.</p>
+        </header>
+
+        <ol class="timeline" data-timeline>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">01</span>
+            <h3 class="timeline__title">Agende pelo WhatsApp</h3>
+            <p>Você fala direto com a nossa equipe, tira dúvidas e escolhe o melhor horário. Sem formulário.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">02</span>
+            <h3 class="timeline__title">Avaliação completa</h3>
+            <p>Conversamos sobre histórico, rotina e objetivos, e avaliamos postura, movimento e pontos de dor. Venha com roupa confortável e traga exames, se tiver.</p>
+            <p class="timeline__meta"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Duração: <span data-cfg="clinica.duracaoAvaliacao">[DURAÇÃO DA AVALIAÇÃO]</span></p>
+          </li>
+          <li class="timeline__item reveal">
+            <span class="timeline__num" aria-hidden="true">03</span>
+            <h3 class="timeline__title">Seu plano individual</h3>
+            <p>Você sai sabendo o próximo passo: o que fazer, com que frequência e como vamos acompanhar sua evolução.</p>
+          </li>
+        </ol>
+
+        <div class="center reveal">
+          <a class="btn btn--primary btn--lg btn--pulse" href="https://wa.me/5561995719079" data-wa="primeira-consulta" data-wa-msg="padrao" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Agendar minha avaliação
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. QUEM CUIDA DE VOCÊ ===================== -->
+    <section class="section section--dark section--deep" id="equipe" aria-labelledby="equipe-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow eyebrow--light">Equipe</p>
+          <h2 class="section__title" id="equipe-title">Quem <em>cuida</em> de você</h2>
+          <p class="section__lead">Profissionais registrados no CREFITO, que acompanham você da avaliação à evolução.</p>
+        </header>
+        <!-- Cards gerados a partir de config.equipe -->
+        <ul class="team" data-render="equipe"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== 8. DEPOIMENTOS ===================== -->
+    <section class="section section--sand" id="depoimentos" aria-labelledby="dep-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="section__title" id="dep-title">Quem já <em>passou</em> por aqui</h2>
+        </header>
+
+        <div class="slider" data-slider aria-roledescription="carrossel" aria-label="Depoimentos">
+          <ul class="slider__track" data-slider-track data-render="depoimentos"></ul>
+          <div class="slider__controls">
+            <button class="icon-btn" type="button" data-slider-prev aria-label="Depoimento anterior"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+            <div class="carousel-dots" data-slider-dots aria-hidden="true"></div>
+            <button class="icon-btn" type="button" data-slider-next aria-label="Próximo depoimento"><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+          </div>
+        </div>
+
+        <ul class="video-testimonials" data-render="videosDepoimento" aria-label="Depoimentos em vídeo"></ul>
+        <!-- Depoimentos: usar apenas relatos reais, autorizados por escrito, sem promessa de resultado (validar com a clínica). -->
+      </div>
+    </section>
+
+    <!-- ===================== 9. O ESPAÇO ===================== -->
+    <section class="section section--light" id="espaco" aria-labelledby="espaco-title" data-pulse-anchor>
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="ecg-mark" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16" pathLength="1"/></svg>
+          <p class="eyebrow">O espaço</p>
+          <h2 class="section__title" id="espaco-title">Um lugar pensado para o seu <em>bem-estar</em></h2>
+          <p class="section__lead">Condomínio RK, Brasília/DF.</p>
+        </header>
+        <ul class="gallery" data-render="galeriaEspaco" data-gallery="espaco" aria-label="Fotos do espaço"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== 10. CTA FINAL ===================== -->
+    <section class="cta-final" id="agendar" aria-labelledby="cta-title" data-pulse-anchor>
+      <div class="cta-final__media">
+        <img class="media__poster" src="assets/img/poster-pulse.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <video class="media__video" data-lazy-video muted loop playsinline autoplay preload="metadata" aria-hidden="true" data-src="assets/video/pulse"></video>
+        <div class="cta-final__overlay"></div>
+      </div>
+      <div class="container cta-final__content reveal">
+        <h2 class="cta-final__title" id="cta-title">Seu movimento é a sua <em>melhor biografia</em>. Vamos escrever o próximo capítulo?</h2>
+        <p class="cta-final__lead">O primeiro passo é uma avaliação. A gente cuida do resto, com você.</p>
+        <a class="btn btn--primary btn--xl btn--pulse" href="https://wa.me/5561995719079" data-wa="cta-final" data-wa-msg="padrao" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+          Agendar minha avaliação
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== 11. RODAPÉ ===================== -->
+  <footer class="footer" id="contato">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#inicio" aria-label="Kinehos — voltar ao início">
+          <svg class="logo__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 17h14l4-9 6 18 6-24 5 19 3-4h22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="logo__text"><span class="logo__name">Kinehos</span><span class="logo__tag">Pilates &amp; Fisioterapia</span></span>
+        </a>
+        <p class="footer__quote">“Transformando o seu movimento na sua melhor biografia.”</p>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__h">Contato</h2>
+        <ul class="footer__list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span><span data-cfg="clinica.endereco">[ENDEREÇO COMPLETO]</span><br>Condomínio RK, Brasília/DF · <span data-cfg="clinica.cep">[CEP]</span></span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span data-cfg="clinica.horarios">[HORÁRIOS]</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><a href="https://wa.me/5561995719079" data-wa="rodape" data-wa-msg="padrao" target="_blank" rel="noopener">WhatsApp <span data-cfg="telefoneExibicao">(61) 99571-9079</span></a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg><a href="https://www.instagram.com/kinehospilates/" data-cfg-href="instagram" target="_blank" rel="noopener">Instagram <span data-cfg="instagramUsuario">@kinehospilates</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer__map" data-map>
+        <!-- Preenchido com o iframe de config.clinica.mapaEmbedUrl; senão, placeholder -->
+        <div class="map-ph">
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span>[MAPA — cole a URL de incorporação do Google Maps em config.js]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__legal">
+      <p>Responsável técnico: <span data-cfg="clinica.responsavelTecnico">[RESPONSÁVEL TÉCNICO]</span> · CREFITO <span data-cfg="clinica.crefitoRT">[CREFITO]</span> · CNPJ <span data-cfg="clinica.cnpj">[CNPJ]</span></p>
+      <p>As informações deste site têm caráter informativo e não substituem uma avaliação profissional. Indicações e resultados variam de pessoa para pessoa.</p>
+      <p>© <span data-year></span> Kinehos Pilates e Fisioterapia</p>
+    </div>
+  </footer>
+
+  <!-- ===================== 12. WHATSAPP FLUTUANTE ===================== -->
+  <div class="wa-float" data-wa-float>
+    <div class="wa-float__bubble" data-wa-bubble hidden>
+      <a href="https://wa.me/5561995719079" data-wa="flutuante-balao" data-wa-msg="padrao" target="_blank" rel="noopener">Agende sua avaliação</a>
+      <button class="wa-float__close" type="button" data-wa-bubble-close aria-label="Fechar aviso"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <a class="wa-float__btn" href="https://wa.me/5561995719079" data-wa="flutuante" data-wa-msg="padrao" target="_blank" rel="noopener" aria-label="Agendar avaliação pelo WhatsApp">
+      <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+    </a>
+  </div>
+
+  <!-- ===================== MODAL (tratamentos) ===================== -->
+  <dialog class="modal" data-modal aria-labelledby="modal-title">
+    <div class="modal__box">
+      <button class="modal__close icon-btn" type="button" data-modal-close aria-label="Fechar"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <svg class="ecg-mark ecg-mark--static" viewBox="0 0 48 24" aria-hidden="true"><path d="M1 12h12l3-6 4 13 4-17 4 14 3-4h16"/></svg>
+      <h2 class="modal__title" id="modal-title"></h2>
+      <div class="modal__content" data-modal-content></div>
+      <p class="modal__note">A indicação de qualquer recurso é feita após avaliação profissional.</p>
+      <a class="btn btn--primary" href="https://wa.me/5561995719079" data-modal-cta target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+        Agendar avaliação
+      </a>
+    </div>
+  </dialog>
+
+  <!-- ===================== LIGHTBOX (galerias) ===================== -->
+  <dialog class="lightbox" data-lightbox aria-label="Visualizador de fotos">
+    <button class="lightbox__close icon-btn" type="button" data-lightbox-close aria-label="Fechar"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev icon-btn" type="button" data-lightbox-prev aria-label="Foto anterior"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__stage" data-lightbox-stage></div>
+      <figcaption class="lightbox__caption" data-lightbox-caption aria-live="polite"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next icon-btn" type="button" data-lightbox-next aria-label="Próxima foto"><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="Kinehos Pilates e Fisioterapia">
+  <!-- Logo provisório (linha de pulso + nome). Substitua pelo arquivo oficial da clínica. -->
+  <path d="M4 34h28l8-18 12 36 12-48 10 38 6-8h4" fill="none" stroke="#3ED6CF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="96" y="38" font-family="Cormorant Garamond, Georgia, serif" font-size="36" font-weight="600" fill="#0E3B43">Kinehos</text>
+  <text x="97" y="56" font-family="DM Sans, Arial, sans-serif" font-size="10" letter-spacing="3" fill="#0E3B43">PILATES &amp; FISIOTERAPIA</text>
+</svg>
