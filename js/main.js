@@ -310,20 +310,47 @@
   // Sem vídeos para quem pediu menos movimento ou economia de dados: fica o poster.
   var videosAllowed = !reduceMotion && !saveData;
 
+  // iPhone/iPad (qualquer navegador no iOS usa o motor do Safari) e Safari no Mac.
+  // O Safari diz que "talvez" toque WebM, escolhe o .webm e trava. Para ele, o MP4
+  // (H.264) vem primeiro. iPadOS se apresenta como Mac, por isso o teste de toque.
+  var ua = navigator.userAgent;
+  var isIOS = /iP(hone|ad|od)/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isSafari = isIOS || (/Safari/.test(ua) && /Apple/.test(navigator.vendor || "") && !/Chrome|Chromium|CriOS|Edg|Firefox|FxiOS/.test(ua));
+
+  /** Tenta tocar; se o navegador bloquear (ex.: iPhone em Modo de Pouca Energia),
+   *  guarda o vídeo para tocar no primeiro toque da pessoa na tela. */
+  var blockedVideos = new Set();
+  function tryPlay(video) {
+    var p = video.play();
+    if (p && p.then) p.then(function () { blockedVideos.delete(video); }, function () { blockedVideos.add(video); });
+    return p;
+  }
+  function unlockOnGesture() {
+    function unlock() {
+      blockedVideos.forEach(function (v) {
+        var r = v.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < window.innerHeight) tryPlay(v);
+      });
+    }
+    ["touchend", "click", "scroll"].forEach(function (t) { window.addEventListener(t, unlock, { passive: true }); });
+  }
+
   /** Coloca <source> WebM + MP4 a partir de um caminho base (sem extensão).
    *  play=false só baixa o vídeo (pré-carregamento), sem tocar. */
   function loadVideo(video, base, play) {
-    video.innerHTML =
-      '<source src="' + base + '.webm" type="video/webm">' +
-      '<source src="' + base + '.mp4" type="video/mp4">';
-    video.muted = true; // exigido para autoplay
+    var webm = '<source src="' + base + '.webm" type=\'video/webm; codecs="vp9"\'>';
+    var mp4 = '<source src="' + base + '.mp4" type=\'video/mp4; codecs="avc1.64001F"\'>';
+    video.innerHTML = isSafari ? mp4 + webm : webm + mp4;
+    // iOS só deixa tocar sozinho se estiver mudo E inline (atributos, não só propriedades)
+    video.muted = true; video.defaultMuted = true;
+    video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); video.setAttribute("webkit-playsinline", "");
     if (play === false) { video.autoplay = false; video.preload = "auto"; }
     var sources = video.querySelectorAll("source");
     // Se os arquivos não existirem, o poster continua visível (o vídeo só aparece ao tocar)
     sources[sources.length - 1].addEventListener("error", function () { video.classList.add("is-broken"); });
     video.addEventListener("playing", function () { video.classList.add("is-playing"); }, { once: true });
     video.load();
-    if (play !== false) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    if (play !== false) tryPlay(video);
     video.dataset.loaded = base;
   }
 
@@ -343,6 +370,9 @@
       function done() { heroVideoState.progress = 1; resolve(); }
       v.preload = "auto";
       v.addEventListener("canplaythrough", done, { once: true });
+      // O Safari do iOS raramente dispara "canplaythrough" (ele não bufferiza à frente):
+      // lá, "já está tocando" é o sinal de pronto.
+      v.addEventListener("playing", done, { once: true });
       v.addEventListener("error", done, { once: true });
       v.addEventListener("progress", function () {
         try {
@@ -350,7 +380,11 @@
         } catch (e) {}
       });
       loadVideo(v, base());
-      v.querySelectorAll("source")[1].addEventListener("error", done);
+      var srcs = v.querySelectorAll("source");
+      srcs[srcs.length - 1].addEventListener("error", done);
+      // Autoplay bloqueado (Modo de Pouca Energia): não segura o loader, fica o poster
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { blockedVideos.add(v); done(); });
     });
 
     if (mq.addEventListener) mq.addEventListener("change", function () {
@@ -360,7 +394,7 @@
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (en) {
         if (!v.dataset.loaded) return;
-        if (en[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+        if (en[0].isIntersecting) tryPlay(v); else v.pause();
       }).observe(v.parentElement);
     }
   }
@@ -368,7 +402,9 @@
   /** Depois que a página abre, baixa os demais vídeos em segundo plano (sem tocar),
    *  para que já estejam prontos quando a pessoa rolar até eles. */
   function preloadLazyVideos() {
-    if (!videosAllowed || saveData) return;
+    // No iOS o pré-carregamento sem tocar é ignorado e só gasta memória: lá cada
+    // vídeo carrega quando chega perto da tela (rootMargin generoso abaixo).
+    if (!videosAllowed || saveData || isIOS) return;
     var vids = $$("[data-lazy-video]").filter(function (v) { return !v.dataset.loaded; });
     var i = 0;
     (function next() {
@@ -393,13 +429,14 @@
         var v = en.target;
         if (en.isIntersecting) {
           if (!v.dataset.loaded) loadVideo(v, v.getAttribute("data-src"));
-          else { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else tryPlay(v);
         } else if (v.dataset.loaded) {
           v.pause();
         }
       });
-    }, { rootMargin: "200px 0px", threshold: 0.01 });
+    }, { rootMargin: isIOS ? "600px 0px" : "200px 0px", threshold: 0.01 });
     vids.forEach(function (v) { io.observe(v); });
+    unlockOnGesture();
   }
 
   /* ---------- 09. Linha de pulso (ECG) ---------- */
