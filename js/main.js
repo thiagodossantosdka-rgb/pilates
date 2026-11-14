@@ -332,7 +332,7 @@
         if (r.bottom > 0 && r.top < window.innerHeight) tryPlay(v);
       });
     }
-    ["touchend", "click", "scroll"].forEach(function (t) { window.addEventListener(t, unlock, { passive: true }); });
+    ["touchstart", "touchend", "click", "scroll"].forEach(function (t) { window.addEventListener(t, unlock, { passive: true }); });
   }
 
   /** Coloca <source> WebM + MP4 a partir de um caminho base (sem extensão).
@@ -340,6 +340,10 @@
   function loadVideo(video, base, play) {
     var webm = '<source src="' + base + '.webm" type=\'video/webm; codecs="vp9"\'>';
     var mp4 = '<source src="' + base + '.mp4" type=\'video/mp4; codecs="avc1.64001F"\'>';
+    // O vídeo fica visível desde o início (regra do iOS); para não aparecer um
+    // quadro preto antes de tocar, ele usa a mesma imagem do poster ao lado.
+    var img = video.parentElement && video.parentElement.querySelector("img");
+    if (img && !video.getAttribute("poster")) video.setAttribute("poster", img.currentSrc || img.src);
     video.innerHTML = isSafari ? mp4 + webm : webm + mp4;
     // iOS só deixa tocar sozinho se estiver mudo E inline (atributos, não só propriedades)
     video.muted = true; video.defaultMuted = true;
