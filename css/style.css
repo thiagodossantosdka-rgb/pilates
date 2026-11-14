@@ -510,6 +510,21 @@ main { position: relative; }
 
 /* ---------- 07e. Equipe ---------- */
 .team { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+/* Celular: carrossel com arraste lateral e "dots" */
+@media (max-width: 767px) {
+  .team-carousel { margin-inline: calc(var(--pad) * -1); }
+  .team {
+    display: flex; gap: 16px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad);
+    padding: 8px var(--pad) 24px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  }
+  .team::-webkit-scrollbar { display: none; }
+  .team .member { flex: 0 0 min(80%, 300px); scroll-snap-align: start; }
+}
+@media (min-width: 768px) { .team-carousel .carousel-dots { display: none; } }
+.carousel-dots--light span { background: rgba(247, 245, 240, .25); }
+.carousel-dots--light span.is-active { background: var(--turquesa); }
 .member {
   background: rgba(247, 245, 240, .04); border: 1px solid rgba(62, 214, 207, .16);
   border-radius: var(--radius-lg); overflow: hidden;

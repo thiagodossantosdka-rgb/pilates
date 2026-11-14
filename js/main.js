@@ -515,11 +515,12 @@
   }
 
   function setupCarousels() {
-    var mc = $("[data-carousel]");
-    if (mc) {
+    // Carrosséis com arraste (motivos e equipe): só os "dots" precisam de JS
+    $$("[data-carousel]").forEach(function (mc) {
       var tr = $("[data-carousel-track]", mc);
+      if (!tr || !tr.children.length) return;
       bindDots(tr, makeDots($("[data-carousel-dots]", mc), tr.children.length));
-    }
+    });
 
     var sl = $("[data-slider]");
     if (!sl) return;

@@ -454,7 +454,11 @@
           <p class="section__lead">Profissionais registrados no CREFITO, que acompanham você da avaliação à evolução.</p>
         </header>
         <!-- Cards gerados a partir de config.equipe -->
-        <ul class="team" data-render="equipe"></ul>
+        <!-- No celular vira carrossel (arrastar para o lado); no desktop, grade -->
+        <div class="team-carousel" data-carousel>
+          <ul class="team" data-render="equipe" data-carousel-track></ul>
+          <div class="carousel-dots carousel-dots--light" data-carousel-dots aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
